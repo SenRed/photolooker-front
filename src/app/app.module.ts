@@ -3,11 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PseudoComponent } from './pseudo/pseudo.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { FileZoneComponent } from './filezone/file-zone.component';
-import { UploadComponent } from './upload/upload.component';
 import {NgxFileDropModule} from "ngx-file-drop";
+import {FileZoneComponent} from "./component/filezone/file-zone.component";
+import {UploadComponent} from "./component/upload/upload.component";
+import {PseudoComponent} from "./component/pseudo/pseudo.component";
+import {HttpClientModule} from "@angular/common/http";
 
 
 
@@ -23,7 +24,8 @@ import {NgxFileDropModule} from "ngx-file-drop";
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxFileDropModule
+    NgxFileDropModule,
+    HttpClientModule
   ],
   providers: [
   ],

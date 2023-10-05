@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {NgxFileDropEntry} from "ngx-file-drop";
+import {BackApiService} from "../../service/back-api.service";
 
 @Component({
   selector: 'app-filezone',
@@ -9,6 +10,10 @@ import {NgxFileDropEntry} from "ngx-file-drop";
 
 
 export class FileZoneComponent {
+
+
+  constructor(private backApiService: BackApiService) {
+  }
   public files: NgxFileDropEntry[] = [];
 
   public dropped(files: NgxFileDropEntry[]) {
@@ -48,11 +53,48 @@ export class FileZoneComponent {
     }
   }
 
-  public fileOver(event: any){
+  fileOver(event: any){
     console.log(event);
   }
 
-  public fileLeave(event: any){
+  fileLeave(event: any){
     console.log(event);
   }
+
+  openUploadPopup() {
+  if (this.files && this.files.length > 0) {
+    const filesToUpload: File[] = [];
+
+    this.files.forEach(fileEntry => {
+      // Vérifie si fileEntry est de type NgxFileDropEntry
+      if (fileEntry.fileEntry.isFile) {
+        const file = fileEntry.fileEntry as FileSystemFileEntry;
+        file.file((realFile: File) => {
+          // Ajoutez le fichier réel à la liste des fichiers à télécharger
+          filesToUpload.push(realFile);
+
+          // Vérifie si tous les fichiers ont été ajoutés à la liste
+          if (filesToUpload.length === this.files.length) {
+            // Appellez la méthode d'upload avec les fichiers
+            this.backApiService.upload(filesToUpload).subscribe(
+              response => {
+                console.log('Upload successful', response);
+                // Faites quelque chose avec la réponse du backend si nécessaire
+              },
+              error => {
+                console.error('Error uploading files', error);
+                // Faites quelque chose en cas d'erreur
+              }
+            );
+          }
+        });
+      }
+    });
+  } else {
+    console.log('Aucun fichier à télécharger.');
+    // Affichez un message d'erreur ou effectuez une action en cas d'absence de fichiers à télécharger.
+  }
+}
+
+
 }

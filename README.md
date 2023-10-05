@@ -1,27 +1,40 @@
-# PhotolookerFront
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.4.
+# Photolooker Frontend
 
-## Development server
+Welcome to the front-end repository of Photolooker, a project that provides innovative solutions for managing and processing photos. This repository contains the code for the front-end part of the Photolooker application.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## About Photolooker
 
-## Code scaffolding
+Photolooker is a comprehensive photo management system designed to simplify the way you handle your images. From uploading and organizing to advanced editing features, Photolooker offers a seamless experience for both casual users and photography professionals.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Getting Started
 
-## Build
+To get started with the Photolooker front-end, follow these steps:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. **Clone the Repository:**
+   ```
+   git clone <repository-url>
+   cd photolooker-frontend
+   ```
 
-## Running unit tests
+2. **Install Dependencies:**
+   ```
+   npm install
+   ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. **Run the Application:**
+   ```
+   npm start
+   ```
 
-## Running end-to-end tests
+   The application will be available at `http://localhost:3000`.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Contributing
 
-## Further help
+We welcome contributions from the community. If you find any issues or have ideas for improvements, please feel free to open an issue or create a pull request.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Future Updates
+
+I am actively working on the Photolooker project. Stay tuned for updates and improvements. An article will be published soon to provide a detailed overview of the project and its features.
+
+Thank you for being a part of Photolooker!
